@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #00C9B7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    height: 100vh;
+    gap: 20px;
+    
+}
+
+.main {
+    border-radius: 10px;
+    display: flex;
+}
+.board-container{
+    border-right: 70px solid #8F76DC;
+    border-bottom: 70px solid #8F76DC;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.title{
+    background-color: #8F76DC;
+    text-align: center;
+    font-size: 3rem;
+    padding: 5px;
+    color: #00C9B7;
+    font-family: Lobster, cursive;
+    font-weight:900
+}
+.grid-container {
+    background-color: white;
+    width: 801px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.controls-container {
+    background-color: #8F76DC;
+    padding: 70px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    left: 1px;
+}
+
+.btn {
+    font-size: 1.25rem;
+    width: 125px;
+    height: 50px;
+    background-color: #00A3DA;
+    color: #494454;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0fd1b0;
+}
+
+.range {
+    margin-top: 10px;
+}
+
+.range input{
+    position: relative;
+    top: 5px;
+}
+
+.box {
+    border: 0.1px solid black;
+  }
