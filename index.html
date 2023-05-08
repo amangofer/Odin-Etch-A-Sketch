@@ -8,7 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="main">
+        <div class="controls-container">
+            <button class="btn" id="black">Black</button>
+            <button class="btn" id="random">Random</button>
+            <button class="btn" id="shade">Shade</button>
+            <button class="btn" id="eraser">Eraser</button>
+            <button class="btn" id="clear">Clear</button>
+            <button class="btn" id="grid-size">Grid Size</button>
+            <div class="range">
+                <input type="range" name="range" value="16" max="100" id="range">
+                <span id="range-value">16</span>
+            </div>
+            
+        </div>
+        <div class="board-container">
+            <div class="title">Etch-A-Sketch</div>
+            <div class="grid-container"></div>
+        </div>
+    </div>
+
+
+    <p>Copyright © <script>document.write(new Date().getFullYear())</script></p>
+
     <script src="main.js"></script>
 </body>
 </html>
