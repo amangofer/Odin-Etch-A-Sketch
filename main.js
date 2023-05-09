@@ -23,6 +23,7 @@ function populate(size) {
     coloredBox.forEach((element) => {
     element.addEventListener("mouseover", colorBox);
     });
+    shadeBox();
 }
 populate(16);
 
@@ -67,6 +68,34 @@ function colorBox(){
     }
 }
 
+// shade the boxes with each pass
+function shadeBox(){
+    const changeRGB = document.querySelectorAll(".box");
+    changeRGB.forEach((element) => {
+        let i = 240;
+        element.addEventListener("mouseover", () => {
+
+            if (element.style.backgroundColor == "white"){
+                i = 240;
+            }
+            if (color == "shade") {
+                let part = element.style.backgroundColor.replace(/(rgb\(|\))/g, "").trim();
+                let arr = part.split(",");
+                let [r,g,b] = [...arr];
+                if (r !== g && g !== b ){
+                    i = 240;
+                    element.style.backgroundColor = `rgb(${i},${i},${i})`;
+                }
+                    element.style.backgroundColor = `rgb(${i},${i},${i})`;
+                    if (i > 0) {
+                        i -= 25;
+                    } 
+            }
+        });
+        
+    });
+}
+
 // change the color to black
 const black = document.getElementById("black");
 black.addEventListener("click", () => {
@@ -83,4 +112,10 @@ eraser.addEventListener("click", () => {
 const random = document.getElementById("random");
 random.addEventListener("click", () => {
     changeMode("random");
+});
+
+// shade the grid with each pass
+const shade = document.getElementById("shade");
+shade.addEventListener("click", () => {
+    changeMode("shade");
 });
