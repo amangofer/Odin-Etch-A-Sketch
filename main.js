@@ -31,3 +31,11 @@ changeGridSize.addEventListener("click", () => {
     document.getElementById("range").value = size;
     populate(size);
 });
+
+// change grid size using range slider
+const slider = document.getElementById("range");
+slider.addEventListener("input", () => {
+  const sliderValue = document.getElementById("range-value");
+  sliderValue.textContent = slider.value;
+  populate(slider.value);
+});
