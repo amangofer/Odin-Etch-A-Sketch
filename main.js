@@ -17,6 +17,12 @@ function populate(size) {
     for (let i = 0; i < size * size; i++) {
         grid.appendChild(box.cloneNode(true));
     }
+
+    // color the boxes 
+    const coloredBox = document.querySelectorAll(".box");
+    coloredBox.forEach((element) => {
+    element.addEventListener("mouseover", colorBox);
+    });
 }
 populate(16);
 
@@ -38,4 +44,31 @@ slider.addEventListener("input", () => {
   const sliderValue = document.getElementById("range-value");
   sliderValue.textContent = slider.value;
   populate(slider.value);
+});
+
+
+let color = ""; // value of the assigned background color
+
+// change color
+function changeMode(colorChoice){
+    color = colorChoice;
+}
+
+// colors the boxes
+function colorBox(){
+    if(color == "random"){
+        this.style.backgroundColor = `rgb(${Math.floor(
+            Math.random() * 255
+          )}, ${Math.floor(Math.random() * 255)}, ${Math.floor(
+            Math.random() * 255
+          )})`;
+    } else{
+        this.style.backgroundColor = color;
+    }
+}
+
+// change the color to black
+const black = document.getElementById("black");
+black.addEventListener("click", () => {
+    changeMode("black");
 });
