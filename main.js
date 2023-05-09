@@ -19,3 +19,15 @@ function populate(size) {
     }
 }
 populate(16);
+
+// change grid size using the button
+const changeGridSize = document.getElementById("grid-size");
+changeGridSize.addEventListener("click", () => {
+    do{
+        size = parseInt(prompt("Insert the new size: "));
+    }while(size < 2 || size > 100 || isNaN(size));
+
+    document.getElementById("range-value").textContent = size;
+    document.getElementById("range").value = size;
+    populate(size);
+});
