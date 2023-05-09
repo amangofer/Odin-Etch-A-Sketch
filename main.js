@@ -72,3 +72,9 @@ const black = document.getElementById("black");
 black.addEventListener("click", () => {
     changeMode("black");
 });
+
+// change the color to white (creating erasing like effect)
+const eraser = document.getElementById("eraser");
+eraser.addEventListener("click", () => {
+    changeMode("white");
+});
