@@ -78,3 +78,9 @@ const eraser = document.getElementById("eraser");
 eraser.addEventListener("click", () => {
     changeMode("white");
 });
+
+// change the color to random rgb color
+const random = document.getElementById("random");
+random.addEventListener("click", () => {
+    changeMode("random");
+});
