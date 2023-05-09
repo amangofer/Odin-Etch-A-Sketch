@@ -96,6 +96,13 @@ function shadeBox(){
     });
 }
 
+function clearBoxes(){
+    const coloredBox = document.querySelectorAll(".box");
+    coloredBox.forEach((element) => {
+        element.style.backgroundColor = "white";
+    });
+}
+
 // change the color to black
 const black = document.getElementById("black");
 black.addEventListener("click", () => {
@@ -119,3 +126,10 @@ const shade = document.getElementById("shade");
 shade.addEventListener("click", () => {
     changeMode("shade");
 });
+
+// clear the grid 
+const clear = document.getElementById("clear");
+clear.addEventListener("click", () => {
+    clearBoxes();
+});
+
